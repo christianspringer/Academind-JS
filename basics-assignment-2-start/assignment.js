@@ -17,4 +17,6 @@ function concatinateStrings(a, b, c){
     return `${a} ${b} ${c}`;
 }
 
-alert(concatinateStrings('alpha', 'beta', 'cappa'));
+const concatenatedString = concatinateStrings('alpha', 'beta', 'cappa');
+
+alert(concatenatedString);
