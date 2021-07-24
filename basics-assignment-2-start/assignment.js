@@ -9,12 +9,12 @@ function alertName(name){
 }
 
 alertBasic();
-alertName();
+alertName('Christian');
 
 task3Element.addEventListener('click', alertBasic);
 
 function concatinateStrings(a, b, c){
-    return a + b + c;
+    return `${a} ${b} ${c}`;
 }
 
 alert(concatinateStrings('alpha', 'beta', 'cappa'));
