@@ -1,7 +1,7 @@
 //Assignment 
 
 //Step 1
-let userInput = 9;
+const userInput = 9;
 let result;
 
 //Step 2
