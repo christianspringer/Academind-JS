@@ -30,6 +30,17 @@
 // console.log('sum', sum);
 'use strict';
 
-let username = 'Christian';
+// let username = 'Christian';
 
-console.log(username);
+// console.log(username);
+
+function getName(){
+  return prompt('Enter your name: ', '');
+}
+
+function greet(){
+  const username = getName()
+  console.log('Hello ' + username);
+}
+
+greet();
