@@ -7,6 +7,8 @@ const DEFAULT_USER_CHOICE = ROCK;
 const RESULT_DRAW = 'DRAW';
 const RESULT_PLAYER_WINS = 'PLAYER_WINS';
 const RESULT_COMPUTER_WINS = 'COMPUTER_WINS';
+const ADD = 'ADD';
+const SUBTRACT = 'SUBTRACT';
 
 let gameIsRunning = false;
 
@@ -82,29 +84,57 @@ startGameBtn.addEventListener('click', () => {
 });
 
 //not game related rest operator example
-const sumUp = (resultHandler, ...numbers) => {
+const combine = (resultHandler, operation, ...numbers) => {
   const validateNumber = (number) => {
     return isNaN(number) ? 0 : number;
   };
 
   let sum = 0;
   for (const number of numbers) {
-    sum += validateNumber(number);
+    if (operation === ADD) {
+      sum += validateNumber(number);
+    } else {
+      sum -= number;
+    }
   }
-  resultHandler(sum);
+  resultHandler(sum), 'the result after addition is ';
 };
 
-const subtractUp = function() {
-  let difference;
-  for (const number of arguments) {
-    difference += number;
-  }
-  return difference;
+// const subtractUp = function (resultHandler, ...numbers) {
+//   let difference = 0;
+//   for (const number of numbers) {
+//     difference -= number;
+//   }
+//   resultHandler(difference);
+// };
+
+const showResult = (messageText, result) => {
+  alert(`${messageText} ${result}`);
 };
 
-const showResult = (result) => {
-  alert(`The result after adding all numbers is ${result}`);
-};
+combine(
+  showResult.bind(this, 'The result after adding all numbers is '),
+  ADD,
+  5,
+  4,
+  11,
+  69,
+  1
+);
 
-sumUp(showResult, 5, 4, 11, 69, 1);
-sumUp(showResult, 12,24, 64);
+combine(
+  showResult.bind(this, 'The result after adding all numbers is '),
+  ADD,
+  12,
+  24,
+  64
+);
+
+combine(
+  showResult.bind(this, 'The result after subtracting is '),
+  SUBTRACT,
+  5,
+  3,
+  1,
+  9
+);
